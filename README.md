@@ -17,6 +17,6 @@ pipenv shell
 ```
 Finally, run:
 ```sh
-python3 pdfCreate.py examples/29-04-2022 --output example.pdf --date DATE --title example
+python3 pdfCreate.py examples/29-04-2022 --output example.pdf --date 2022-04-30 --title example
 ```
 
