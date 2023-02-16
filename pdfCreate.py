@@ -43,10 +43,10 @@ def main():
         ignoredFiles = []
     source_codes = []
     for file in path.iterdir():
-        if not (file.name in ignoredFiles):
+        if not (file.name in ignoredFiles) and not file.is_dir():
             with open(file, "r") as source_code_fo:
                 source_code = source_code_fo.read()
-                comment = re.search(r"/\*([\w\d\s=,;\^/\(\)\+\-\.:!\*'\"]+)\*/",source_code).group(1)
+                comment = re.search(r"/\*([\w\d\s=,;\^/\(\)\+\-\.:!\*'\"\~]+)\*/",source_code).group(1)
                 source_codes.append(
                     {
                         "header": comment.strip().split("\n")[0],
